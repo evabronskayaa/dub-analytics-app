@@ -107,17 +107,16 @@ def get_urls(product_id: int):
     return img_urls, orders_count, card_response, feedback_response, price_history_response
 
 
-def get_wb_data(brands: list):
-    urls = []
+def get_data(brands: list):
+    regions = '80,38,83,4,64,33,68,70,30,40,86,75,69,22,1,31,66,110,48,71,114'
+    urls = [
+        f'https://catalog.wb.ru/brands/l/catalog?appType=1&brand={brand}&limit=300&curr=rub&dest=-1257786'
+        f'&page={i}&regions={regions}&sort=popular&spp=0'
+        for brand in brands
+        for i in range(1, 3)
+    ]
+
     all_products = []
-
-    for brand in brands:
-        for i in range(1, 5):
-            url = (f'https://catalog.wb.ru/brands/l/catalog?appType=1&brand={brand}&limit=300&curr=rub&dest=-1257786'
-                   f'&page={i}&regions=80,38,83,4,64,33,68,70,30,40,86,75,69,22,1,31,66,110,48,71,'
-                   f'114&sort=popular&spp=0')
-            urls.append(url)
-
     for url in urls:
         response = get_response(url=url)
         products = prepare_items(response=response)
@@ -125,10 +124,10 @@ def get_wb_data(brands: list):
 
     df = pd.DataFrame(all_products)
 
-    file_path = '../../data/wb_products.csv'
+    file_path = 'wb_products.csv'
     df.to_csv(file_path, index=False, header=True)
 
 
 if __name__ == '__main__':
     brands = [20246, 4126, 158986, 106259]
-    get_wb_data(brands=brands)
+    get_data(brands=brands)
