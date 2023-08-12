@@ -8,7 +8,6 @@ layout = html.Div([
     dbc.Container(
         children=[header],
         fluid=True,
-        className='d-flex flex-column justify-content-space-around'
     ),
 ])
 
