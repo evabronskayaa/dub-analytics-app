@@ -41,36 +41,28 @@ header_accordion = dmc.Accordion(
                         dmc.AccordionItem(
                             [
                                 dmc.AccordionControl('Elena Gibina'),
-                                dmc.AccordionPanel(
-                                    'Web-developer, Data Analyst'
-                                ),
+                                dmc.AccordionPanel('Web-developer, Data Analyst'),
                             ],
                             value="elena",
                         ),
                         dmc.AccordionItem(
                             [
                                 dmc.AccordionControl('Eva Bronskaya'),
-                                dmc.AccordionPanel(
-                                    'Web-developer, Data Analyst'
-                                ),
+                                dmc.AccordionPanel('Web-developer, Data Analyst'),
                             ],
                             value="eva",
                         ),
                         dmc.AccordionItem(
                             [
                                 dmc.AccordionControl('Denis Nikitin'),
-                                dmc.AccordionPanel(
-                                    'Data Analyst'
-                                ),
+                                dmc.AccordionPanel('Data Analyst'),
                             ],
                             value="denis",
                         ),
                         dmc.AccordionItem(
                             [
                                 dmc.AccordionControl('Artur Fattakhov'),
-                                dmc.AccordionPanel(
-                                    'Data Analyst'
-                                ),
+                                dmc.AccordionPanel('Data Analyst'),
                             ],
                             value="artur",
                         ),
