@@ -32,8 +32,9 @@ def prepare_items(response):
             product_id = product['id']
             img_urls, orders_count, product_card_info, feedback_response, price_history_response = get_urls(product_id)
             category_1 = product_card_info['subj_root_name']
+            unnecessary_categories = ['Периферия и аксессуары', 'Хозяйственные товары']
 
-            if category_1 not in ['Периферия и аксессуары', 'Хозяйственные товары']:
+            if category_1 not in unnecessary_categories:
                 products.append({
                     'brand_id': product['brandId'],
                     'brand': product['brand'],
@@ -113,7 +114,7 @@ def get_data(brands: list):
         f'https://catalog.wb.ru/brands/l/catalog?appType=1&brand={brand}&limit=300&curr=rub&dest=-1257786'
         f'&page={i}&regions={regions}&sort=popular&spp=0'
         for brand in brands
-        for i in range(1, 3)
+        for i in range(1, 5)
     ]
 
     all_products = []
@@ -124,10 +125,16 @@ def get_data(brands: list):
 
     df = pd.DataFrame(all_products)
 
-    file_path = 'wb_products.csv'
+    file_path = '../../data/wb_products.csv'
     df.to_csv(file_path, index=False, header=True)
 
 
 if __name__ == '__main__':
-    brands = [20246, 4126, 158986, 106259]
-    get_data(brands=brands)
+    brands = {
+        'lime': 20246,
+        'befree': 4126,
+        'pull&bear': 158986,
+        'bershka': 106259
+    }
+
+    get_data(brands=[*brands.values()])
