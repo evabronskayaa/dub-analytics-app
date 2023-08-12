@@ -28,7 +28,7 @@ def prepare_items(response):
     products_raw = response['payload']['products']
 
     if len(products_raw) > 0:
-        for product in response['payload']['products']:
+        for product in products_raw:
             product_id = product['sku']
             product_response = get_product_info(product=product_id)
 
