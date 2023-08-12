@@ -39,6 +39,7 @@ def prepare_items(response):
                 'category_2': product_response['breadcrumbs'][2]['label'],
                 'product_id': product_response['sku'],
                 'product_img': ['https://a.lmcdn.ru/img600x866' + photo for photo in product_response['gallery']],
+                'product_url': f"https://www.lamoda.ru/api/v1/product/get?sku={product_response['sku']}&is_hybrid_supported=false",
                 'name': product_response['title'],
                 'gender': product_response['gender'],
                 'description': product_response['seo_title'],
