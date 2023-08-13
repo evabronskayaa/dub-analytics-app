@@ -1,8 +1,8 @@
 import pandas as pd
 from datetime import datetime, date 
 
-def get_pivot_nunique_stats(df:pd.DataFrame,
-                            index:str) -> pd.DataFrame:
+
+def get_pivot_nunique_stats(df: pd.DataFrame, index: str) -> pd.DataFrame:
     
     temp = df.groupby(index)[['product_id']]\
         .nunique()\
@@ -10,7 +10,8 @@ def get_pivot_nunique_stats(df:pd.DataFrame,
         .rename(columns={'product_id':'count_items'})\
         .sort_values(by='count_items', ascending=False)
     
-    return temp
+    return temp[:7]
+
 
 def get_price_history_data(current_price:int,
                            price_history:list) -> (list, list):

@@ -95,3 +95,27 @@ header = html.Header([
 )
 
 
+menu = html.Div([
+    dmc.NavLink(label="Скачать отчет", style=dict(width='auto', textAlign='left')),
+    dmc.NavLink(label="Фильтры")
+])
+
+
+general_metrics = html.Div([
+    dmc.Grid([
+        dmc.Col(dcc.Graph(id='competitor-stats-barchart'), span=3, className='graph', mr=5),
+        dmc.Col(dcc.Graph(id='gender-stats-piechart'), span=3, className='graph', mx=5),
+        dmc.Col(dcc.Graph(id='category2-stats-barchart'), span=3, className='graph', ml=5),
+    ],
+        gutter="xl",
+        grow=True,
+        className='graphs'
+    )
+])
+
+competitors_offers = html.Div([
+    dmc.Text('Топ-10 предложений конкурентов', className='block-title'),
+    dmc.Pagination(total=5, siblings=1, page=1, radius=0, color='#000000', withControls=True, withEdges=True),
+],
+    className='offers'
+)

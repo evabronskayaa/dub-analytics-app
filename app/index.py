@@ -5,7 +5,8 @@ from app import app
 
 from data import wb_data
 from data_processing import get_pivot_nunique_stats
-from plots import draw_competitor_stats_barchart, draw_gender_stats_piechart, draw_price_history_indicator
+from plots import draw_competitor_stats_barchart, draw_piechart, draw_indicator
+
 
 # callbacks are here
 
@@ -21,20 +22,30 @@ def drawer_demo(opened_menu, opened_drawer):
 
 
 @app.callback(
-    Output('competitor_stats_piechart', 'figure'),
+    Output('competitor-stats-barchart', 'figure'),
+    Input('drawer-menu', 'figure'),
 )
-def draw_competitor_stats():
+def draw_competitor_stats(value):
     pivot = get_pivot_nunique_stats(wb_data, 'brand')
-    return draw_competitor_stats_barchart(pivot)
+    return draw_competitor_stats_barchart(pivot, 'brand', title='Количество предложений по конкурентам')
 
 
 @app.callback(
-    Output('gender_stats_piechart', 'figure'),
+    Output('gender-stats-piechart', 'figure'),
+    Input('drawer-menu', 'figure'),
 )
-def draw_competitor_stats():
+def draw_competitor_stats(value):
     pivot = get_pivot_nunique_stats(wb_data, 'gender')
-    return draw_gender_stats_piechart(pivot)
+    return draw_piechart(pivot)
 
+
+@app.callback(
+    Output('category2-stats-barchart', 'figure'),
+    Input('drawer-menu', 'figure'),
+)
+def draw_competitor_stats(value):
+    pivot = get_pivot_nunique_stats(wb_data, 'category2')
+    return draw_competitor_stats_barchart(pivot, 'category2', title='Количество предложений по категориям')
 
 
 if __name__ == '__main__':
