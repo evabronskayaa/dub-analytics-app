@@ -31,10 +31,13 @@ def prepare_items(response):
         for product in products_raw:
             product_id = product['id']
             img_urls, orders_count, product_card_info, feedback_response, price_history_response = get_urls(product_id)
-            category_1 = product_card_info['subj_root_name']
-            unnecessary_categories = ['Периферия и аксессуары', 'Хозяйственные товары']
+            category_2 = product_card_info['subj_name']
+            stop_category2 = ['Банданы', 'Бейсболки', 'Ботильоны', 'Ботинки', 'Бусы', 'Кольца', 'Комбинезоны рабочие',
+                              'Кошельки', 'Кроссовки', 'Лаки для ногтей', 'Панамы', 'Полусапожки', 'Плавки', 'Приправы',
+                              'Ремни', 'Рюкзаки', 'Сандалии', 'Сапоги', 'Серьги', 'Лоферы', 'Солнцезащитные очки',
+                              'Сумки', 'Туалетная вода', 'Цепочки', 'Чехлы для стилусов', 'Шапки', 'Шарфы', 'Шлепанцы']
 
-            if category_1 not in unnecessary_categories:
+            if category_2 not in stop_category2:
                 products.append({
                     'brand_id': product['brandId'],
                     'brand': product['brand'],
