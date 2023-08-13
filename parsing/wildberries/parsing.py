@@ -148,7 +148,7 @@ def get_data(brands: list):
         f'https://catalog.wb.ru/brands/l/catalog?appType=1&brand={brand}&limit=300&curr=rub&dest=-1257786'
         f'&page={i}&regions={regions}&sort=popular&spp=0'
         for brand in brands
-        for i in range(1, 2)
+        for i in range(1, 4)
     ]
 
     all_products = []
