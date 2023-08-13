@@ -98,7 +98,7 @@ def draw_gender_stats_piechart(gender_stats:pd.DataFrame):
     return fig
 
 
-def draw_competitor_stats_piechart(competitor_stats:pd.DataFrame):
+def draw_competitor_stats_barchart(competitor_stats:pd.DataFrame):
 
     plot_width = 500
     plot_height = 350
@@ -129,7 +129,6 @@ def draw_competitor_stats_piechart(competitor_stats:pd.DataFrame):
         xaxis={'title': None, 
                 'visible': True, 
                 'showticklabels': True},
-        font_color=font_color,
         title={'font_size': title_font_size},
         legend={'xanchor':'center',
                 'font_size': legend_font_size},
