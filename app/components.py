@@ -8,8 +8,7 @@ header_accordion = dmc.Accordion(
             dmc.AccordionControl('FAQ'),
             dmc.AccordionPanel([
                 dmc.Accordion([
-                    dmc.AccordionItem(
-                        [
+                    dmc.AccordionItem([
                             dmc.AccordionControl('Для чего это приложение?'),
                             dmc.AccordionPanel(
                                 'Это приложение разработано для компании DUB, '
@@ -19,8 +18,7 @@ header_accordion = dmc.Accordion(
                         ],
                         value="for-what",
                     ),
-                    dmc.AccordionItem(
-                        [
+                    dmc.AccordionItem([
                             dmc.AccordionControl('Второй вопрос я не придумала'),
                             dmc.AccordionPanel('пук'),
                         ],
@@ -33,34 +31,29 @@ header_accordion = dmc.Accordion(
         ],
             value="faq",
         ),
-        dmc.AccordionItem(
-            [
+        dmc.AccordionItem([
                 dmc.AccordionControl('Developers'),
                 dmc.AccordionPanel([
                     dmc.Accordion([
-                        dmc.AccordionItem(
-                            [
+                        dmc.AccordionItem([
                                 dmc.AccordionControl('Elena Gibina'),
                                 dmc.AccordionPanel('Web-developer, Data Analyst'),
                             ],
                             value="elena",
                         ),
-                        dmc.AccordionItem(
-                            [
+                        dmc.AccordionItem([
                                 dmc.AccordionControl('Eva Bronskaya'),
                                 dmc.AccordionPanel('Web-developer, Data Analyst'),
                             ],
                             value="eva",
                         ),
-                        dmc.AccordionItem(
-                            [
+                        dmc.AccordionItem([
                                 dmc.AccordionControl('Denis Nikitin'),
                                 dmc.AccordionPanel('Data Analyst'),
                             ],
                             value="denis",
                         ),
-                        dmc.AccordionItem(
-                            [
+                        dmc.AccordionItem([
                                 dmc.AccordionControl('Artur Fattakhov'),
                                 dmc.AccordionPanel('Data Analyst'),
                             ],
