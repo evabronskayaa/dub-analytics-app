@@ -22,7 +22,7 @@
 
 .center-block {
     margin: 0 auto;
-    padding-right: 1.5%;
+    #padding-right: 1.5%;
 }
 
 .graphs {
@@ -36,7 +36,7 @@
 }
 
 .offers {
-    margin: 3% 1.5% 1.5%;
+    margin: 3% 1.5%;
 }
 
 .mantine-q8wmbn[data-active] {
@@ -45,6 +45,62 @@
     background-color: rgb(0 0 0);
 }
 
-.block-title{
+.block-title {
     font-size: 20px;
+}
+
+span {
+    width: auto;
+}
+
+.mantine-8nr514 {
+    background-color: #000000;
+    border-radius: 0;
+    float: right;
+}
+
+
+.mantine-8nr514:hover {
+    background-color: #eaeaea;
+    color: #000000;
+    border-radius: 0;
+
+}
+
+.mantine-qb3vl4, .mantine-rph89u {
+    border-radius: 0
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 605px;
+    margin: 0 0 1.5%;
+}
+
+.card-section {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5% 0 1.5%
+}
+
+.card-section2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 1.5% 0 1.5% 6%
+}
+
+.card-text {
+    margin-bottom: 10px;
+
+}
+
+.img {
+    margin-bottom: -3%;
+}
+
+.cards {
+    display: flex;
+
 }

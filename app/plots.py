@@ -70,7 +70,7 @@ def draw_piechart(gender_stats: pd.DataFrame):
 
     font_family = 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap'
     font_color = '#000000'
-    title_font_size = 16
+    title_font_size = 17
     legend_font_size = 12
 
     fig = px.pie(
@@ -114,7 +114,7 @@ def draw_barchart(df: pd.DataFrame, index: str, title=None):
                   '#FACBC7', 
                   '#FBDEDA', 
                   '#D8F931']
-    title_font_size = 16
+    title_font_size = 17
 
     fig = px.bar(
         df,
