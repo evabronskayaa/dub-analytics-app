@@ -281,3 +281,5 @@ pyrightconfig.json
 */.vscode/*
 .vscode/launch.json
 *.csv
+
+/.vscode/
