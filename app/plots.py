@@ -70,7 +70,7 @@ def draw_piechart(gender_stats: pd.DataFrame):
 
     font_family = 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap'
     font_color = '#000000'
-    title_font_size = 16
+    title_font_size = 17
     legend_font_size = 12
 
     fig = px.pie(
@@ -106,7 +106,7 @@ def draw_competitor_stats_barchart(df: pd.DataFrame, index: str, title=None):
     font_family = 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap'
     font_color = '#000000'
     bar_colors = ['#E04F4F', '#FB625E', '#F1937A', '#F69F97']
-    title_font_size = 16
+    title_font_size = 17
 
     fig = px.bar(
         df,
