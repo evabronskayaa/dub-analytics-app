@@ -4,6 +4,8 @@ import pandas as pd
 
 
 def draw_indicator(dates_data: list, prices_data: list):
+    if not dates_data:
+        return None
     current_price = prices_data[-1]
     ref_price = prices_data[-2]
     max_price = int(max(prices_data) * 1.3)

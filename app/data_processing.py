@@ -14,8 +14,11 @@ def get_pivot_nunique_stats(df: pd.DataFrame, index: str) -> pd.DataFrame:
 
 
 def get_price_history_data(current_price:int,
-                           price_history:list) -> (list, list):
-    
+                           price_history:str) -> (list, list):
+    try:
+        price_history = eval(price_history)
+    except:
+        return None
     price_history = [{'dt': datetime.fromtimestamp(pair['dt']),
                  'price': pair['price']['RUB'] / 100} for pair in price_history]
     

@@ -115,7 +115,7 @@ card = dmc.Card([
             dmc.Text(wb_data.brand.iloc[0], weight=700, className='card-text'),
             dmc.Text(wb_data.name.iloc[0], weight=500, className='card-text'),
             dmc.Text(
-                wb_data.materials_.iloc[0],
+                wb_data.materials.iloc[0],
                 size="sm",
                 color="dimmed",
                 className='card-text'
@@ -148,7 +148,7 @@ card = dmc.Card([
             # dmc.NavLink(wb_data.product_url.iloc[0], className='card-text'),
             dmc.Space(h=20),
             dmc.Text(
-                wb_data.materials_.iloc[0],
+                wb_data.materials.iloc[0],
                 size="sm",
                 color="dimmed",
                 className='card-text'
@@ -206,7 +206,7 @@ card2 = dmc.Card([
             dmc.Text(wb_data.brand.iloc[2], weight=700, className='card-text'),
             dmc.Text(wb_data.name.iloc[2], weight=500, className='card-text'),
             dmc.Text(
-                wb_data.materials_.iloc[2],
+                wb_data.materials.iloc[2],
                 size="sm",
                 color="dimmed",
                 className='card-text'
@@ -264,7 +264,7 @@ card3 = dmc.Card([
             dmc.Text(wb_data.brand.iloc[3], weight=700, className='card-text'),
             dmc.Text(wb_data.name.iloc[3], weight=500, className='card-text'),
             dmc.Text(
-                wb_data.materials_.iloc[3],
+                wb_data.materials.iloc[3],
                 size="sm",
                 color="dimmed",
                 className='card-text'

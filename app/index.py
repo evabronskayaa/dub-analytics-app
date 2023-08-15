@@ -72,8 +72,12 @@ def draw_competitor_stats(checkbx_gender):
     Input('drawer-menu', 'figure'),
 )
 def draw_competitor_stats(value):
-    dates_data, prices_data = get_price_history_data(current_price=wb_data.sale_price, price_history=wb_data.price_history)
-    return draw_indicator(dates_data, prices_data)
+    dates_data, prices_data = get_price_history_data(current_price=wb_data.sale_price, 
+                                                    price_history=wb_data.price_history)
+    if dates_data or prices_data:
+        return draw_indicator(dates_data, prices_data)
+    else:
+        
 
 
 @app.callback(
