@@ -8,7 +8,7 @@ def get_materials(val):
             else:
                 pass
         if materials:
-            return f"СОСТАВ: {', '.join(materials)}".replace(';', ',')
+            return f"Состав: {', '.join(materials)}".replace(';', ',')
         else:
             return 'Состав не указан'
     else:

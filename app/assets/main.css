@@ -22,7 +22,7 @@
 
 .center-block {
     margin: 0 auto;
-    #padding-right: 1.5%;
+    padding-right: 3%;
 }
 
 .graphs {
@@ -67,14 +67,15 @@ span {
 
 }
 
-.mantine-qb3vl4, .mantine-rph89u {
+.mantine-qb3vl4, .mantine-rph89u, .mantine-1137jyz {
     border-radius: 0
 }
 
 .card {
     display: flex;
     justify-content: space-between;
-    width: 605px;
+    /*width: 912px;*/
+    width: 49.7%;
     margin: 0 0 1.5%;
 }
 
@@ -88,7 +89,7 @@ span {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 1.5% 0 1.5% 6%
+    margin: 1.5% 0 1.5% 3.5%
 }
 
 .card-text {
@@ -102,5 +103,28 @@ span {
 
 .cards {
     display: flex;
+}
 
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -0.4%;
+    margin-right: -0.4%;
+    margin-bottom: -0.4%;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.menu{
+    margin: 0.5%;
+}
+
+.menu-item{
+    margin-bottom: 25px;
+}
+
+.mantine-1137jyz:checked{
+    background-color: #000000;
+    border-color: #000000;
 }
