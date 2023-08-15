@@ -85,7 +85,9 @@ def draw_piechart(gender_stats: pd.DataFrame):
         width=plot_width,
         height=plot_height,
         legend_traceorder="reversed",
-        title={'font_size': title_font_size, 'xanchor': 'center', 'x': 0.5, },
+        title={'font_size': title_font_size, 
+               'xanchor': 'center', 
+               'x': 0.5, },
         legend={
             'y': 0.99,
             'x': 0.01,
@@ -100,24 +102,29 @@ def draw_piechart(gender_stats: pd.DataFrame):
     return fig
 
 
-def draw_competitor_stats_barchart(df: pd.DataFrame, index: str, title=None):
+def draw_barchart(df: pd.DataFrame, index: str, title=None):
     plot_height = 300
 
     font_family = 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap'
     font_color = '#000000'
-    bar_colors = ['#E04F4F', '#FB625E', '#F1937A', '#F69F97']
+    # bar_colors = ['#E04F4F', '#FB625E', '#F1937A', '#F69F97', '#FACBC7', '#FBDEDA', '#D7E0A4', '#D8F931']
+    bar_colors = ['#E04F4F', '#FB625E', '#F1937A', '#F69F97', '#FACBC7', '#FBDEDA', '#D8F931']
     title_font_size = 16
 
     fig = px.bar(
         df,
         x=index,
-        y='count_items',
+            y='count_items',
         color=index,
         color_discrete_sequence=bar_colors,
         title=title,
         text_auto=True,
         width=500,
         height=350
+    )
+
+    fig.update_traces(
+        textfont_color='white'
     )
 
     fig.update_layout(

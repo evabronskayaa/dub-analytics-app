@@ -10,7 +10,7 @@ def get_pivot_nunique_stats(df: pd.DataFrame, index: str) -> pd.DataFrame:
         .rename(columns={'product_id':'count_items'})\
         .sort_values(by='count_items', ascending=False)
     
-    return temp[:7]
+    return temp[:5]
 
 
 def get_price_history_data(current_price:int,
