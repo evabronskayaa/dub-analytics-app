@@ -74,11 +74,7 @@ def draw_competitor_stats(checkbx_gender):
 def draw_competitor_stats(value):
     dates_data, prices_data = get_price_history_data(current_price=wb_data.sale_price, 
                                                     price_history=wb_data.price_history)
-    if dates_data or prices_data:
-        return draw_indicator(dates_data, prices_data)
-    else:
-        
-
+    return draw_indicator(dates_data, prices_data)
 
 @app.callback(
     Output('gender_stats_piechart', 'figure'),
