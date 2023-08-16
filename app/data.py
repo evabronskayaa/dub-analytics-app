@@ -5,6 +5,7 @@ from data_preprocessing import get_materials, get_sizes, get_manufacturer, get_c
 wb_data = pd.read_csv('../data/wb_products.csv')
 
 wb_data = wb_data[wb_data.category1 == 'Одежда'].reset_index(drop=True)
+wb_data.rename(columns={'name': 'product_name'}, inplace=True)
 
 wb_data['product_url'] = wb_data.product_id.apply(lambda x: f'https://www.wildberries.ru/catalog/{x}/detail.aspx')
 wb_data['orders_count_str'] = wb_data.orders_count.apply(lambda x: f'Купили более {x} раз')

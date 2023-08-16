@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+body{
+}
+
 .modal::-webkit-scrollbar {
     width: 12px; /* ширина всей полосы прокрутки */
     margin-left: 20px;
 }
 
 .modal::-webkit-scrollbar-thumb {
-    background-color: #ffffff; /* цвет бегунка */
-    border-radius: 20px; /* округлось бегунка */
-    border: 2px solid #ffffff; /* отступ вокруг бегунка */
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
 
 }
-
 
 .container {
     display: flex;
@@ -87,8 +91,9 @@ span {
 .card {
     display: flex;
     justify-content: space-between;
-    width: 49.7%;
-    margin: 0 0 1.5%;
+    width: 99%;
+    height: 400px;
+    margin: 1.5% 0 1.5%;
 }
 
 .card-section {
@@ -101,16 +106,17 @@ span {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 1.5% 0 1.5% 3.5%
+    margin: 1.5% 0 1.5% 3.5%;
+    width: 70%
 }
 
 .card-text {
-    margin-bottom: 10px;
-
+    margin-bottom: 5px;
 }
 
 .img {
     margin-bottom: -3%;
+    height: 100%;
 }
 
 .cards {
@@ -123,7 +129,7 @@ span {
     align-items: center;
     margin-left: -0.4%;
     margin-right: -0.4%;
-    margin-bottom: -0.4%;
+    margin-bottom: -0.6%;
     background-color: #000000;
     color: #FFFFFF;
 }
@@ -134,6 +140,7 @@ span {
 
 .menu-item {
     margin-bottom: 25px;
+    width: 100%
 }
 
 .mantine-1137jyz:checked {
@@ -142,13 +149,15 @@ span {
 }
 
 .mantine-qb3vl4 {
-    width: 55%;
+   /* width: 55%;*/
+    width: 80%;
 }
 
 .mantine-1xpr3so {
     color: rgb(134, 142, 150);
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: underline;
+    margin-bottom: 3%;
 }
 
 .mantine-l553vn {
@@ -174,11 +183,7 @@ span {
 }
 
 .modal {
-    height: 500px;
+    height: 525px;
+    width: 60%;
     overflow: auto;
-}
-
-.category-checkboxes{
-    width: 100%;
-
 }

@@ -11,7 +11,7 @@ def draw_indicator(dates_data: list, prices_data: list):
     max_price = int(max(prices_data) * 1.3)
 
     plot_width = 400
-    plot_height = 300
+    plot_height = 250
 
     number_font_size = int(0.00052 * plot_width * plot_height)
     delta_font_size = int(0.00012 * plot_width * plot_height)
