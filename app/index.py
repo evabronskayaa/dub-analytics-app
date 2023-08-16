@@ -32,6 +32,16 @@ def modal_demo(nc1, opened):
     return not opened
 
 
+@callback(
+    Output("modal-simple-2", "opened"),
+    Input("modal-demo-button-2", "n_clicks"),
+    State("modal-simple-2", "opened"),
+    prevent_initial_call=True,
+)
+def modal_demo(nc1, opened):
+    return not opened
+
+
 @app.callback(
     Output('competitor-stats-barchart', 'figure'),
     Input('drawer-menu', 'figure'),
@@ -94,10 +104,26 @@ def draw_competitor_stats(value):
     Output('top_positions_first_product_img', 'children'),
     Output('top_positions_first_brand', 'children'),
     Output('top_positions_first_name', 'children'),
+    Output('top_positions_first_orders_count', 'children'),
     Output('top_positions_first_rating', 'children'),
     Output('top_positions_first_feedbacks_count', 'children'),
     Output('top_positions_first_materials', 'children'),
     Output('top_positions_first_description', 'children'),
+
+    Output('top_positions_first_modal_product_img', 'children'),
+    Output('top_positions_first_modal_product_url', 'href'),
+    Output('top_positions_first_modal_brand', 'children'),
+    Output('top_positions_first_modal_name', 'children'),
+    Output('top_positions_first_modal_manufacturer_country', 'children'),
+    # Output('top_positions_first_modal_season', 'children'),
+    Output('top_positions_first_modal_rating', 'children'),
+    Output('top_positions_first_modal_feedbacks_count', 'children'),
+    Output('top_positions_first_modal_materials', 'children'),
+    Output('top_positions_first_modal_description', 'children'),
+    Output('top_positions_first_modal_sizes', 'children'),
+    Output('top_positions_first_modal_colors', 'children'),
+    Output('top_positions_first_modal_orders_count', 'children'),
+    Output('top_positions_first_modal_volume', 'children'),
 
     Output('top_positions_second_product_img', 'children'),
     Output('top_positions_second_brand', 'children'),
@@ -107,7 +133,8 @@ def draw_competitor_stats(value):
     Output('top_positions_second_materials', 'children'),
     Output('top_positions_second_description', 'children'),
 
-    # Output('top_positions_second', 'children'),
+    Output('top_positions_second_modal_product_img', 'children'),
+
     Input('pagination', 'page'),
 )
 def draw_competitor_stats(page):
@@ -131,19 +158,34 @@ def draw_competitor_stats(page):
         height=400,
     )
 
+    product_img_modal_1 = dmc.Image(
+        src=top_positions.product_img.iloc[0],
+        width=418,
+        height=600,
+    )
+
     product_img_2 = dmc.Image(
         src=top_positions.product_img.iloc[1],
         width=250,
         height=400,
     )
 
-    return product_img_1, top_positions.brand.iloc[0], top_positions.name.iloc[0], \
-        top_positions.rating.iloc[0], top_positions.feedbacks_count.iloc[0], top_positions.materials.iloc[0], \
+    product_img_modal_2 = dmc.Image(
+        src=top_positions.product_img.iloc[1],
+        width=418,
+        height=600,
+    )
+
+    return product_img_1, top_positions.brand.iloc[0], top_positions.name.iloc[0], top_positions.orders_count_str.iloc[0],\
+        top_positions.rating_str.iloc[0], top_positions.feedbacks_count_str.iloc[0], top_positions.materials.iloc[0], \
         top_positions.description.iloc[0][:200] + '...', \
+        product_img_modal_1, top_positions.product_url.iloc[0], top_positions.brand.iloc[0], \
+        top_positions.name.iloc[0], top_positions.manufacturer_country.iloc[0], top_positions.rating_str.iloc[0], \
+        top_positions.feedbacks_count_str.iloc[0], top_positions.materials.iloc[0], top_positions.description.iloc[0],  top_positions.sizes.iloc[0], \
+        top_positions.colors.iloc[0], top_positions.orders_count_str.iloc[0], top_positions.volume_str.iloc[0], \
         product_img_2, top_positions.brand.iloc[1], top_positions.name.iloc[1], \
         top_positions.rating.iloc[1], top_positions.feedbacks_count.iloc[1], top_positions.materials.iloc[1], \
-        top_positions.description.iloc[1][:200] + '...', \
-
+        top_positions.description.iloc[1][:200] + '...', product_img_modal_2
 
 
 if __name__ == '__main__':

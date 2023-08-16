@@ -1,3 +1,16 @@
+.modal::-webkit-scrollbar {
+    width: 12px; /* ширина всей полосы прокрутки */
+    margin-left: 20px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* цвет бегунка */
+    border-radius: 20px; /* округлось бегунка */
+    border: 2px solid #ffffff; /* отступ вокруг бегунка */
+
+}
+
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -74,7 +87,6 @@ span {
 .card {
     display: flex;
     justify-content: space-between;
-    /*width: 912px;*/
     width: 49.7%;
     margin: 0 0 1.5%;
 }
@@ -105,7 +117,7 @@ span {
     display: flex;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,15 +128,57 @@ span {
     color: #FFFFFF;
 }
 
-.menu{
+.menu {
     margin: 0.5%;
 }
 
-.menu-item{
+.menu-item {
     margin-bottom: 25px;
 }
 
-.mantine-1137jyz:checked{
+.mantine-1137jyz:checked {
     background-color: #000000;
     border-color: #000000;
+}
+
+.mantine-qb3vl4 {
+    width: 55%;
+}
+
+.mantine-1xpr3so {
+    color: rgb(134, 142, 150);
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.mantine-l553vn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mantine-1dcetaa {
+    margin: 20px 20px 0 0;
+}
+
+.mantine-qb3vl4 {
+    padding: 0;
+}
+
+.img-modal {
+    margin-top: -18.75%;
+    margin-bottom: -3.75%;
+}
+
+.modal-text {
+    margin: 0 3%;
+}
+
+.modal {
+    height: 500px;
+    overflow: auto;
+}
+
+.category-checkboxes{
+    width: 100%;
+
 }

@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 
 from layouts import layout
 
-app = dash.Dash(__name__, title='DUB Analytics')
+app = dash.Dash(__name__, title='DUB ANALYTICS')
 app.config.suppress_callback_exceptions = True
 
 app.layout = layout

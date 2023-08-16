@@ -40,16 +40,32 @@ header_accordion = dmc.Grid([
         offset="md",
         mb=10,
         children=[
-            dmc.Checkbox(label="Пальто", value="react"),
-            dmc.Checkbox(label="Куртки", value="vue"),
-            dmc.Checkbox(label="Платья", value="vue"),
-            dmc.Checkbox(label="Топы", value="vue"),
-            dmc.Checkbox(label="Юбки", value="vue"),
-            dmc.Checkbox(label="Блузки", value="vue"),
-            dmc.Checkbox(label="Шорты", value="vue"),
-            dmc.Checkbox(label="Футболки", value="vue"),
-            dmc.Checkbox(label="Джинсы", value="vue"),
-            dmc.Checkbox(label="Рубашки", value="vue"),
+            dmc.Spoiler(
+                showLabel="Еще",
+                hideLabel="Скрыть",
+                maxHeight=50,
+                children=[
+                    dmc.Checkbox(label="Брюки", value="Брюки"),
+                    dmc.Checkbox(label="Джинсы", value="Джинсы"),
+                    dmc.Checkbox(label="Платья", value="Платья"),
+                    dmc.Checkbox(label="Топы", value="Топы"),
+                    dmc.Checkbox(label="Футболки", value="Футболки"),
+                    dmc.Checkbox(label="ЮБКИ", value="ЮБКИ"),
+                ],
+                className='category-checkboxes'
+            )
+
+            # dmc.Checkbox(label="Блузки", value="vue"),
+            # dmc.Checkbox(label="Пальто", value="react"),
+            # dmc.Checkbox(label="Куртки", value="vue"),
+            # dmc.Checkbox(label="Платья", value="vue"),
+            # dmc.Checkbox(label="Топы", value="vue"),
+            # dmc.Checkbox(label="Юбки", value="vue"),
+            # dmc.Checkbox(label="Блузки", value="vue"),
+            # dmc.Checkbox(label="Шорты", value="vue"),
+            # dmc.Checkbox(label="Футболки", value="vue"),
+            # dmc.Checkbox(label="Джинсы", value="vue"),
+            # dmc.Checkbox(label="Рубашки", value="vue"),
             # dmc.Checkbox(label="Свитеры", value="vue"),
             # dmc.Checkbox(label="Блузки-боди", value="vue"),
             # dmc.Checkbox(label="Кардиганы", value="vue"),
@@ -73,7 +89,7 @@ header_accordion = dmc.Grid([
             # dmc.Checkbox(label="Ветровки", value="vue"),
             #
             # dmc.Checkbox(label="Полукомбинезоны", value="vue"),
-            # dmc.Checkbox(label="Джемперы", value="vue"),
+            # dmc.Checkbox(labeФутболкиl="Джемперы", value="vue"),
             # dmc.Checkbox(label="Худи", value="vue"),
             # dmc.Checkbox(label="Футболки-поло", value="vue"),
             #
@@ -163,6 +179,12 @@ card = dmc.Card([
             dmc.Text(id='top_positions_first_brand', weight=700, className='card-text'),
             dmc.Text(id='top_positions_first_name', weight=500, className='card-text'),
             dmc.Text(
+                id='top_positions_first_orders_count',
+                size="sm",
+                color="dimmed",
+                className='card-text'
+            ),
+            dmc.Text(
                 id='top_positions_first_rating',
                 size="sm",
                 color="dimmed",
@@ -195,15 +217,134 @@ card = dmc.Card([
     ),
 
     dmc.Modal(
-        title=wb_data.brand.iloc[0],
         id="modal-simple",
         zIndex=10000,
         children=[
-            dmc.Image(
-                src=wb_data.product_img.iloc[0],
-                width=250,
-                height=400,
+            html.Div([
+                html.Div(id='top_positions_first_modal_product_img', className='img img-modal')
+            ], className='card-section'),
+            html.Div([
+                dmc.Text(id='top_positions_first_modal_brand', weight=700, size="xl", className='card-text'),
+                dmc.Text(id='top_positions_first_modal_name', weight=500, size="xl", className='card-text'),
+                dmc.Anchor('Ссылка на товар на Wildberries', size="xl", id='top_positions_first_modal_product_url',
+                           href='/'),
+                dmc.Space(h=20),
+                dmc.Text(
+                    id='top_positions_first_modal_orders_count',
+                    color="#000000",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_volume',
+                    color="#000000",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_rating',
+                    color="#000000",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_feedbacks_count',
+                    color="#000000",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_materials',
+                    color="dimmed",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_manufacturer_country',
+                    color="dimmed",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_colors',
+                    color="dimmed",
+                    className='card-text'
+                ),
+                dmc.Text(
+                    id='top_positions_first_modal_sizes',
+                    color="dimmed",
+                    className='card-text'
+                ),
+                dmc.Spoiler(
+                    showLabel="Показать полностью",
+                    hideLabel="Скрыть",
+                    maxHeight=50,
+                    children=[
+                        dmc.Text(
+                            id='top_positions_first_modal_description',
+                            color="dimmed",
+                            className='card-text'
+                        )
+                    ],
+                ),
+                # dcc.Graph(id='price_history')
+            ],
+                className='card-section modal-text modal',
+            )
+        ],
+        className='card-section2 '
+
+    ),
+],
+    withBorder=True,
+    className='card',
+)
+
+card2 = dmc.Card([
+    dmc.CardSection([
+        html.Div(id='top_positions_second_product_img', )],
+        className='img'
+    ),
+    html.Div([
+        html.Div([
+            dmc.Text(id='top_positions_second_brand', weight=700, className='card-text'),
+            dmc.Text(id='top_positions_second_name', weight=500, className='card-text'),
+            dmc.Text(
+                id='top_positions_second_rating',
+                size="sm",
+                color="dimmed",
+                className='card-text'
             ),
+            dmc.Text(
+                id='top_positions_second_feedbacks_count',
+                size="sm",
+                color="dimmed",
+                className='card-text'
+            ),
+            dmc.Text(
+                id='top_positions_second_materials',
+                size="sm",
+                color="dimmed",
+                className='card-text'
+            ),
+            dmc.Text(
+                id='top_positions_second_description',
+                size="sm",
+                color="dimmed",
+                className='card-text'
+            ),
+        ],
+            className='card-section'
+        ),
+        dmc.Button("Подробнее", id="modal-demo-button-2"),
+    ],
+        className='card-section2'
+    ),
+
+    dmc.Modal(
+        id="modal-simple-2",
+        zIndex=10000,
+        children=[
+            dmc.CardSection([
+                html.Div(id='top_positions_second_modal_product_img', style={'margin': 'auto'})
+            ],
+                className='img'
+            ),
+            dmc.Text(wb_data.brand.iloc[0], weight=500, className='card-text'),
             dmc.Text(wb_data.name.iloc[0], weight=500, className='card-text'),
             dmc.NavLink(wb_data.product_url.iloc[0], className='card-text'),
             dmc.Space(h=20),
@@ -248,71 +389,6 @@ card = dmc.Card([
     ),
 ],
     withBorder=True,
-    className='card left-block',
-)
-
-card2 = dmc.Card([
-    dmc.CardSection([
-        html.Div(id='top_positions_second_product_img', )],
-        className='img'
-    ),
-    html.Div([
-        html.Div([
-            dmc.Text(id='top_positions_second_brand', weight=700, className='card-text'),
-            dmc.Text(id='top_positions_second_name', weight=500, className='card-text'),
-            dmc.Text(
-                id='top_positions_second_rating',
-                size="sm",
-                color="dimmed",
-                className='card-text'
-            ),
-            dmc.Text(
-                id='top_positions_second_feedbacks_count',
-                size="sm",
-                color="dimmed",
-                className='card-text'
-            ),
-            dmc.Text(
-                id='top_positions_second_materials',
-                size="sm",
-                color="dimmed",
-                className='card-text'
-            ),
-            dmc.Text(
-                id='top_positions_second_description',
-                size="sm",
-                color="dimmed",
-                className='card-text'
-            ),
-        ],
-            className='card-section'
-        ),
-        dmc.Button("Подробнее", id="modal-demo-button3"),
-    ],
-        className='card-section2'
-    ),
-
-    dmc.Modal(
-        title="New Modal",
-        id="modal-simple3",
-        zIndex=10000,
-        children=[
-            dmc.Text("I am in a modal component."),
-            dmc.Space(h=20),
-            dmc.Group([
-                dmc.Button(
-                    "Close",
-                    color="red",
-                    variant="outline",
-                    id="modal-close-button3",
-                ),
-            ],
-                position="right",
-            ),
-        ],
-    ),
-],
-    withBorder=True,
     className='card right-block',
 )
 
@@ -332,7 +408,7 @@ competitors_offers = html.Div([
 )
 
 footer = dmc.Footer([
-    dmc.Text("DUB Analytics | 2023")
+    dmc.Text("DUB ANALYTICS | 2023")
 ],
     height=100,
     className='footer'
