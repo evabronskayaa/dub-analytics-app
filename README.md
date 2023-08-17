@@ -7,33 +7,33 @@
 
 ## Дизайн сервиса
 
-Взаимодействие пользователя с сервисом происходит через дашборд
+Взаимодействие пользователя с сервисом происходит через дашборд  
 
-![](https://drive.google.com/file/d/1HAPnAC7PMXksq5gNU8zIG-nKlECOly0T/view?usp=drive_link)
+![Screenshot 1. first view](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/first_view.png)  
 
-Главная задача сервиса: собирать самую актуальную информацию по потребительскому спросу в разных категориях одежды
+Главная задача сервиса: собирать самую актуальную информацию по потребительскому спросу в разных категориях одежды  
 
-![](https://drive.google.com/file/d/1G7BXZw15s2_pvmhoz-hGn9oS7tDEBdWH/view?usp=drive_link)
+![Screenshot 2. grid SKU](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/grid_SKU.png)  
 
 Для удобства работы продумана гибкая система фильтрации:  
     - бренд (конкурент)  
     - пол  
-    - категория одежды
-    - размер
+    - категория одежды  
+    - размер  
 
-![](https://drive.google.com/file/d/14TotJ38J1BYKWgzqVx9CIkmAJkURCDkJ/view?usp=drive_link)
+![Screenshot 3. filter menu](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/filter_menu.png)  
 
 ## Дерево файлов
 
-├───ai
-├───app
-│   └───assets
-├───data
-├───parsing
-│   ├───lamoda
-│   ├───ozon
-│   └───wildberries
-└───venv
+├───ai  
+├───app  
+│   └───assets  
+├───data  
+├───parsing  
+│   ├───lamoda  
+│   ├───ozon  
+│   └───wildberries  
+└───venv  
 
 ## Запуск
 
