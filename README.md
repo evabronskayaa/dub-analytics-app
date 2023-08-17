@@ -9,11 +9,11 @@
 
 Взаимодействие пользователя с сервисом происходит через дашборд  
 
-![Screenshot 1. first view](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/first_view.png)  
+![Screenshot 1. first view](https://github.com/evabronskayaa/dub-analytics-app/raw/master/app/assets/img/first_view.png)  
 
 Главная задача сервиса: собирать самую актуальную информацию по потребительскому спросу в разных категориях одежды  
 
-![Screenshot 2. grid SKU](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/grid_SKU.png)  
+![Screenshot 2. grid SKU](https://github.com/evabronskayaa/dub-analytics-app/raw/master/app/assets/img/grid_SKU.png)  
 
 Для удобства работы продумана гибкая система фильтрации:  
     - бренд (конкурент)  
@@ -21,7 +21,7 @@
     - категория одежды  
     - размер  
 
-![Screenshot 3. filter menu](https://github.com/evabronskayaa/dub-analytics-app/raw/master/assets/img/filter_menu.png)  
+![Screenshot 3. filter menu](https://github.com/evabronskayaa/dub-analytics-app/raw/master/app/assets/img/filter_menu.png)  
 
 ## Дерево файлов
 
