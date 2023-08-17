@@ -25,7 +25,7 @@ def get_sizes(val):
             else:
                 pass
         if sizes:
-            return f"Размеры: {', '.join(set(sizes))}".replace(';', ',')
+            return f"Размеры: {', '.join(set(sorted(sizes)))}".replace(';', ',')
         else:
             return 'Размер не указан'
     else:

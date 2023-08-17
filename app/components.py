@@ -51,8 +51,9 @@ header_filters = dmc.Grid([
                     dmc.Checkbox(label="Футболки", value="Футболки"),
                     dmc.Checkbox(label="Юбки", value="Юбки"),
                     dmc.Checkbox(label="Блузки", value="Блузки"),
-                    dmc.Checkbox(label="Пальто", value="Пальто"),
-                    dmc.Checkbox(label="Куртки", value="Куртки"),
+                    dmc.Checkbox(label="Верхняя одежда", value="Верхняя одежда"),
+                    # dmc.Checkbox(label="Пальто", value="Пальто"),
+                    # dmc.Checkbox(label="Куртки", value="Куртки"),
                     dmc.Checkbox(label="Шорты", value="Шорты"),
                     dmc.Checkbox(label="Рубашки", value="Рубашки"),
                     dmc.Checkbox(label="Свитеры", value="Свитеры"),
@@ -62,34 +63,34 @@ header_filters = dmc.Grid([
                     dmc.Checkbox(label="Пуловеры", value="Пуловеры"),
                     dmc.Checkbox(label="Комбинезоны", value="Комбинезоны"),
                     dmc.Checkbox(label="Блейзеры", value="Блейзеры"),
-                    dmc.Checkbox(label="Дубленки", value="Дубленки"),
+                    # dmc.Checkbox(label="Дубленки", value="Дубленки"),
                     dmc.Checkbox(label="Леггинсы", value="Леггинсы"),
-                    dmc.Checkbox(label="Плащи", value="Плащи"),
-                    dmc.Checkbox(label="Пуховики", value="Пуховики"),
+                    # dmc.Checkbox(label="Плащи", value="Плащи"),
+                    # dmc.Checkbox(label="Пуховики", value="Пуховики"),
                     dmc.Checkbox(label="Пиджаки", value="Пиджаки"),
                     dmc.Checkbox(label="Рубашки пижамные", value="Рубашки пижамные"),
                     dmc.Checkbox(label="Бомберы", value="Бомберы"),
                     dmc.Checkbox(label="Лонгсливы", value="Лонгсливы"),
-                    dmc.Checkbox(label="Тренчкоты", value="Тренчкоты"),
+                    # dmc.Checkbox(label="Тренчкоты", value="Тренчкоты"),
                     dmc.Checkbox(label="Жилеты", value="Жилеты"),
-                    dmc.Checkbox(label="Ветровки", value="Ветровки"),
+                    # dmc.Checkbox(label="Ветровки", value="Ветровки"),
                     dmc.Checkbox(label="Полукомбинезоны", value="Полукомбинезоны"),
                     dmc.Checkbox(label="Джемперы", value="Джемперы"),
                     dmc.Checkbox(label="Худи", value="Худи"),
                     dmc.Checkbox(label="Футболки-поло", value="Футболки-поло"),
                     dmc.Checkbox(label="Свитшоты", value="Свитшоты"),
                     dmc.Checkbox(label="Жакеты", value="Жакеты"),
-                    dmc.Checkbox(label="Жилеты утепленные", value="Жилеты утепленные"),
+                    # dmc.Checkbox(label="Жилеты утепленные", value="Жилеты утепленные"),
                     dmc.Checkbox(label="Сарафаны", value="Сарафаны"),
                     dmc.Checkbox(label="Брюки пижамные", value="Брюки пижамные"),
                     dmc.Checkbox(label="Шорты пижамные", value="Шорты пижамные"),
                     dmc.Checkbox(label="Водолазки", value="Водолазки"),
                     dmc.Checkbox(label="Бермуды", value="Бермуды"),
                     dmc.Checkbox(label="Туники", value="Туники"),
-                    dmc.Checkbox(label="Дождевики", value="Дождевики"),
+                    # dmc.Checkbox(label="Дождевики", value="Дождевики"),
                     dmc.Checkbox(label="Велосипедки", value="Велосипедки"),
                     dmc.Checkbox(label="Джеггинсы", value="Джеггинсы"),
-                    dmc.Checkbox(label="Парки", value="Парки"),
+                    # dmc.Checkbox(label="Парки", value="Парки"),
                 ],
                 value=[],
                 className='menu-item'
@@ -151,11 +152,14 @@ general_metrics = html.Div([
 
 card_1 = html.Div(id='card_1')
 card_2 = html.Div(id='card_2')
+card_3 = html.Div(id='card_3')
+card_4 = html.Div(id='card_4')
 
 cards = dmc.SimpleGrid(
     cols=2,
+    # rows=2,
     children=[
-        card_1, card_2
+        card_1, card_2, card_3, card_4
     ]
 )
 

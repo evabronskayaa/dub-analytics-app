@@ -172,7 +172,7 @@ def create_product_modal_card(product, modal_simple_id='modal-simple'):
                     className='card-text'
                 ),
                 dmc.Text(
-                    product.sizes,
+                    product.sizes_str,
                     color="dimmed",
                     className='card-text'
                 ),
@@ -198,12 +198,16 @@ def create_product_modal_card(product, modal_simple_id='modal-simple'):
     return modal
 
 
-def create_product_card(product_1, product_2):
+def create_product_card(product_1, product_2, product_3, product_4):
     small_card_1_img, small_card_1_content = create_product_small_card(product_1, modal_demo_button_id='modal-demo-button')
     small_card_2_img, small_card_2_content = create_product_small_card(product_2, modal_demo_button_id='modal-demo-button-2')
+    small_card_3_img, small_card_3_content = create_product_small_card(product_3, modal_demo_button_id='modal-demo-button-3')
+    small_card_4_img, small_card_4_content = create_product_small_card(product_4, modal_demo_button_id='modal-demo-button-4')
 
     modal_card_1 = create_product_modal_card(product_1, modal_simple_id='modal-simple')
     modal_card_2 = create_product_modal_card(product_2, modal_simple_id='modal-simple-2')
+    modal_card_3 = create_product_modal_card(product_3, modal_simple_id='modal-simple-3')
+    modal_card_4 = create_product_modal_card(product_4, modal_simple_id='modal-simple-4')
 
     card_1 = dmc.Card([
         small_card_1_img, small_card_1_content,
@@ -221,4 +225,20 @@ def create_product_card(product_1, product_2):
         className='card',
     )
 
-    return card_1, card_2
+    card_3 = dmc.Card([
+        small_card_3_img, small_card_3_content,
+        modal_card_3
+    ],
+        withBorder=True,
+        className='card',
+    )
+
+    card_4 = dmc.Card([
+        small_card_4_img, small_card_4_content,
+        modal_card_4
+    ],
+        withBorder=True,
+        className='card',
+    )
+
+    return card_1, card_2, card_3, card_4
