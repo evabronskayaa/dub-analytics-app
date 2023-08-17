@@ -131,7 +131,7 @@ def create_product_modal_card(product, modal_simple_id='modal-simple'):
             html.Div([
                 dmc.Text(product.brand, weight=700, size="xl", className='card-text'),
                 dmc.Text(product.product_name, weight=500, size="xl", className='card-text'),
-                dmc.Anchor('Ссылка на товар на Wildberries', href=product.product_url),
+                dmc.Anchor('Ссылка на товар на Wildberries', href=product.product_url, target='_blank'),
                 dmc.Space(h=20),
                 dcc.Graph(figure=draw_competitor_stats(product)),
                 dmc.Space(h=20),

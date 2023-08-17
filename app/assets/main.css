@@ -62,6 +62,10 @@ body{
     background-color: rgb(0 0 0);
 }
 
+.mantine-cdd1uo {
+    overflow-y: scroll;
+}
+
 .block-title {
     font-size: 20px;
 }
