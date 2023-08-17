@@ -23,17 +23,16 @@
 
 ![Screenshot 3. filter menu](https://github.com/evabronskayaa/dub-analytics-app/raw/master/app/assets/img/filter_menu.png)  
 
-## Дерево файлов
+## App components
 
-├───ai  
-├───app  
-│   └───assets  
-├───data  
-├───parsing  
-│   ├───lamoda  
-│   ├───ozon  
-│   └───wildberries  
-└───venv  
+- `app.py` - определение сервиса  
+- `components.py` - отдельные компоненты сервиса: filters, header, cards, footer  
+- `data_preprocessing.py` - функции генерации новых признаков  
+- `data_processing.py` - функции обработки данных  
+- `data.py` - обработка данных, генерация новых признаков  
+- `index.py` - запуск приложения, callbacks  
+- `layouts.py` - общая структура сервиса  
+- `plots.py` - функции отрисовки графиков   
 
 ## Запуск
 
