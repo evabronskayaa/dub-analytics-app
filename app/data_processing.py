@@ -57,10 +57,22 @@ def sort_df_by_filter(df, series_name, series_values):
     return df
 
 
-def sort_df_by_all_filters(df, checkbx_brand, checkbx_gender, checkbx_category):
+def sort_df_by_sizes(series, checkbx_sizes):
+    a = series
+    b = checkbx_sizes
+
+    c = list(set(a) & set(b))
+    return True if len(c) != 0 else False
+
+
+def sort_df_by_all_filters(df, checkbx_brand, checkbx_gender, checkbx_category, checkbx_sizes):
     filtrated_df = sort_df_by_filter(df=df, series_name='brand', series_values=checkbx_brand)
     filtrated_df = sort_df_by_filter(df=filtrated_df, series_name='gender', series_values=checkbx_gender)
     filtrated_df = sort_df_by_filter(df=filtrated_df, series_name='category2', series_values=checkbx_category)
+
+    if checkbx_sizes:
+        filtrated_df['in_sizes'] = filtrated_df['sizes'].apply(lambda x: sort_df_by_sizes(x, checkbx_sizes))
+        filtrated_df = filtrated_df[filtrated_df['in_sizes']]
 
     return filtrated_df
 

@@ -15,8 +15,8 @@ def get_materials(val):
         return 'Состав не указан'
     
 
-def get_sizes(val):
-    if val == val:
+def get_str_sizes(val):
+    if val:
         val = eval(val)
         sizes = []
         for size in val:
@@ -30,6 +30,17 @@ def get_sizes(val):
             return 'Размер не указан'
     else:
         return 'Размер не указан'
+
+
+def get_sizes(val):
+    if val:
+        val = eval(val)
+        sizes = []
+        for size in val:
+            if size.get('name'):
+                sizes.append(size.get('origName').upper())
+
+        return sizes
     
 
 def get_manufacturer(val):

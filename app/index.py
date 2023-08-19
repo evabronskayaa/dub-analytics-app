@@ -63,14 +63,14 @@ def modal_demo(nc1, opened):
     Input('checkbx-brand', 'value'),
     Input('checkbx-gender', 'value'),
     Input('checkbx-category', 'value'),
+    Input('checkbx-sizes', 'value'),
 )
-def draw_competitor_stats(checkbx_brand, checkbx_gender, checkbx_category):
+def draw_competitor_stats(checkbx_brand, checkbx_gender, checkbx_category, checkbx_sizes):
     filtrated_df = sort_df_by_all_filters(df=wb_data,
                                           checkbx_brand=checkbx_brand,
                                           checkbx_gender=checkbx_gender,
-                                          checkbx_category=checkbx_category)
-
-    filtrated_df = sort_df_by_filter(df=filtrated_df, series_name='brand', series_values=checkbx_brand)
+                                          checkbx_category=checkbx_category,
+                                          checkbx_sizes=checkbx_sizes)
 
     pivot = get_pivot_nunique_stats(filtrated_df, 'brand')
 
@@ -82,12 +82,14 @@ def draw_competitor_stats(checkbx_brand, checkbx_gender, checkbx_category):
     Input('checkbx-brand', 'value'),
     Input('checkbx-gender', 'value'),
     Input('checkbx-category', 'value'),
+    Input('checkbx-sizes', 'value'),
 )
-def draw_gender_stats(checkbx_brand, checkbx_gender, checkbx_category):
+def draw_gender_stats(checkbx_brand, checkbx_gender, checkbx_category, checkbx_sizes):
     filtrated_df = sort_df_by_all_filters(df=wb_data,
                                           checkbx_brand=checkbx_brand,
                                           checkbx_gender=checkbx_gender,
-                                          checkbx_category=checkbx_category)
+                                          checkbx_category=checkbx_category,
+                                          checkbx_sizes=checkbx_sizes)
 
     pivot = get_pivot_nunique_stats(filtrated_df, 'gender')
 
@@ -99,12 +101,14 @@ def draw_gender_stats(checkbx_brand, checkbx_gender, checkbx_category):
     Input('checkbx-brand', 'value'),
     Input('checkbx-gender', 'value'),
     Input('checkbx-category', 'value'),
+    Input('checkbx-sizes', 'value'),
 )
-def draw_category_stats(checkbx_brand, checkbx_gender, checkbx_category):
+def draw_category_stats(checkbx_brand, checkbx_gender, checkbx_category, checkbx_sizes):
     filtrated_df = sort_df_by_all_filters(df=wb_data,
                                           checkbx_brand=checkbx_brand,
                                           checkbx_gender=checkbx_gender,
-                                          checkbx_category=checkbx_category)
+                                          checkbx_category=checkbx_category,
+                                          checkbx_sizes=checkbx_sizes)
 
     pivot = get_pivot_nunique_stats(filtrated_df, 'category2')
 
@@ -121,13 +125,15 @@ def draw_category_stats(checkbx_brand, checkbx_gender, checkbx_category):
     Input('checkbx-brand', 'value'),
     Input('checkbx-gender', 'value'),
     Input('checkbx-category', 'value'),
+    Input('checkbx-sizes', 'value'),
     Input("framework-select", "value")
 )
-def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category, sorting):
+def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category, checkbx_sizes, sorting):
     filtrated_df = sort_df_by_all_filters(df=wb_data,
                                           checkbx_brand=checkbx_brand,
                                           checkbx_gender=checkbx_gender,
-                                          checkbx_category=checkbx_category)
+                                          checkbx_category=checkbx_category,
+                                          checkbx_sizes=checkbx_sizes)
 
     if sorting is None:
         sorting = ['rating', 'orders_count', 'feedbacks_count']
@@ -149,5 +155,5 @@ def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category,
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
     # app.run_server(host='0.0.0.0', debug=True)

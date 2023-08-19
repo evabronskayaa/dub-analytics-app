@@ -57,7 +57,7 @@ header_filters = dmc.Grid([
         className='category-checkboxes'
     ),
     dmc.CheckboxGroup(
-        id="checkbox-sizes",
+        id="checkbx-sizes",
         label="Размер",
         orientation="horizontal",
         offset="md",
