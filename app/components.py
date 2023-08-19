@@ -1,6 +1,11 @@
+import pandas as pd
+
 from dash import html, dash, dcc
 import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
+
+from data import wb_data
+from data_processing import get_unique_series_values
 
 
 header_filters = dmc.Grid([
@@ -43,54 +48,9 @@ header_filters = dmc.Grid([
                 orientation="horizontal",
                 offset="md",
                 mb=10,
-                children=[
-                    dmc.Checkbox(label="Брюки", value="Брюки"),
-                    dmc.Checkbox(label="Джинсы", value="Джинсы"),
-                    dmc.Checkbox(label="Платья", value="Платья"),
-                    dmc.Checkbox(label="Топы", value="Топы"),
-                    dmc.Checkbox(label="Футболки", value="Футболки"),
-                    dmc.Checkbox(label="Юбки", value="Юбки"),
-                    dmc.Checkbox(label="Блузки", value="Блузки"),
-                    dmc.Checkbox(label="Верхняя одежда", value="Верхняя одежда"),
-                    # dmc.Checkbox(label="Пальто", value="Пальто"),
-                    # dmc.Checkbox(label="Куртки", value="Куртки"),
-                    dmc.Checkbox(label="Шорты", value="Шорты"),
-                    dmc.Checkbox(label="Рубашки", value="Рубашки"),
-                    dmc.Checkbox(label="Свитеры", value="Свитеры"),
-                    dmc.Checkbox(label="Блузки-боди", value="Блузки-боди"),
-                    dmc.Checkbox(label="Кардиганы", value="Кардиганы"),
-                    dmc.Checkbox(label="Толстовки", value="Толстовки"),
-                    dmc.Checkbox(label="Пуловеры", value="Пуловеры"),
-                    dmc.Checkbox(label="Комбинезоны", value="Комбинезоны"),
-                    dmc.Checkbox(label="Блейзеры", value="Блейзеры"),
-                    # dmc.Checkbox(label="Дубленки", value="Дубленки"),
-                    dmc.Checkbox(label="Леггинсы", value="Леггинсы"),
-                    # dmc.Checkbox(label="Плащи", value="Плащи"),
-                    # dmc.Checkbox(label="Пуховики", value="Пуховики"),
-                    dmc.Checkbox(label="Пиджаки", value="Пиджаки"),
-                    dmc.Checkbox(label="Рубашки пижамные", value="Рубашки пижамные"),
-                    dmc.Checkbox(label="Бомберы", value="Бомберы"),
-                    dmc.Checkbox(label="Лонгсливы", value="Лонгсливы"),
-                    # dmc.Checkbox(label="Тренчкоты", value="Тренчкоты"),
-                    dmc.Checkbox(label="Жилеты", value="Жилеты"),
-                    # dmc.Checkbox(label="Ветровки", value="Ветровки"),
-                    dmc.Checkbox(label="Полукомбинезоны", value="Полукомбинезоны"),
-                    dmc.Checkbox(label="Джемперы", value="Джемперы"),
-                    dmc.Checkbox(label="Худи", value="Худи"),
-                    dmc.Checkbox(label="Футболки-поло", value="Футболки-поло"),
-                    dmc.Checkbox(label="Свитшоты", value="Свитшоты"),
-                    dmc.Checkbox(label="Жакеты", value="Жакеты"),
-                    # dmc.Checkbox(label="Жилеты утепленные", value="Жилеты утепленные"),
-                    dmc.Checkbox(label="Сарафаны", value="Сарафаны"),
-                    dmc.Checkbox(label="Брюки пижамные", value="Брюки пижамные"),
-                    dmc.Checkbox(label="Шорты пижамные", value="Шорты пижамные"),
-                    dmc.Checkbox(label="Водолазки", value="Водолазки"),
-                    dmc.Checkbox(label="Бермуды", value="Бермуды"),
-                    dmc.Checkbox(label="Туники", value="Туники"),
-                    # dmc.Checkbox(label="Дождевики", value="Дождевики"),
-                    dmc.Checkbox(label="Велосипедки", value="Велосипедки"),
-                    dmc.Checkbox(label="Джеггинсы", value="Джеггинсы"),
-                    # dmc.Checkbox(label="Парки", value="Парки"),
+                children=[dmc.Checkbox(label=i, value=i) 
+                          for i in sorted(get_unique_series_values(df=wb_data[wb_data.category2.notna()], 
+                                                            series_name='category2'))
                 ],
                 value=[],
                 className='menu-item'
@@ -105,13 +65,13 @@ header_filters = dmc.Grid([
         offset="md",
         mb=10,
         children=[
-            dmc.Checkbox(label="XXS", value="react"),
-            dmc.Checkbox(label="XS", value="vue"),
-            dmc.Checkbox(label="S", value="vue"),
-            dmc.Checkbox(label="M", value="vue"),
-            dmc.Checkbox(label="L", value="vue"),
-            dmc.Checkbox(label="XL", value="vue"),
-            dmc.Checkbox(label="XXL", value="vue"),
+            dmc.Checkbox(label="XXS", value="XXS"),
+            dmc.Checkbox(label="XS", value="XS"),
+            dmc.Checkbox(label="S", value="S"),
+            dmc.Checkbox(label="M", value="M"),
+            dmc.Checkbox(label="L", value="L"),
+            dmc.Checkbox(label="XL", value="XL"),
+            dmc.Checkbox(label="XXL", value="XXL"),
         ],
         value=[],
         className='menu-item'

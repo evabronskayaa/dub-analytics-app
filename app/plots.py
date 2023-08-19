@@ -87,16 +87,18 @@ def draw_piechart(gender_stats: pd.DataFrame):
         width=plot_width,
         height=plot_height,
         legend_traceorder="reversed",
-        title={'font_size': title_font_size, 
-               'xanchor': 'center', 
-               'x': 0.5, },
+        title={
+            'font_size': title_font_size, 
+            'xanchor': 'center', 
+            'x': 0.5
+            },
         legend={
             'y': 0.99,
             'x': 0.01,
             'xanchor': 'left',
             'yanchor': 'top',
             'font_size': legend_font_size
-        },
+            },
         font_family=font_family,
         font_color=font_color,
         margin=dict(l=20, r=20, b=20)
@@ -141,11 +143,15 @@ def draw_barchart(df: pd.DataFrame, index: str, title=None):
         xaxis={'title': None,
                'visible': True,
                'showticklabels': True},
-        title={'font_size': title_font_size, 'xanchor': 'center', 'x': 0.5},
+        title={'font_size': title_font_size, 
+               'xanchor': 'center', 
+               'x': 0.5},
         font_family=font_family,
         font_color=font_color,
         plot_bgcolor='rgba(0, 0, 0, 0)',
-        margin=dict(l=20, r=20, b=20),
+        margin={'l': 20, 
+                'r': 20, 
+                'b': 20},
     )
 
     return fig

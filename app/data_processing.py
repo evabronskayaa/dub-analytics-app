@@ -42,11 +42,18 @@ def draw_competitor_stats(product):
     return draw_indicator(dates_data, prices_data)
 
 
+def get_unique_series_values(df, series_name):
+    list_vals = df[series_name].unique().tolist()
+
+    return list_vals
+
+
 def sort_df_by_filter(df, series_name, series_values):
     if not series_values:
         series_values = df[series_name].unique()
 
     df = df[df[series_name].isin(series_values)]
+
     return df
 
 
