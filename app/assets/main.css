@@ -3,12 +3,12 @@
 body {
 }
 
-.modal::-webkit-scrollbar {
+.modal::-webkit-scrollbar, .mantine-cdd1uo::-webkit-scrollbar{
     width: 12px; /* ширина всей полосы прокрутки */
     margin-left: 20px;
 }
 
-.modal::-webkit-scrollbar-thumb {
+.modal::-webkit-scrollbar-thumb, .mantine-cdd1uo::-webkit-scrollbar-thumb {
     background-color: #ffffff;
     border-radius: 20px;
     border: 2px solid #ffffff;
