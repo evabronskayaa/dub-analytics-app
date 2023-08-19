@@ -49,9 +49,8 @@ header_filters = dmc.Grid([
                 offset="md",
                 mb=10,
                 children=[dmc.Checkbox(label=i, value=i) 
-                          for i in sorted(get_unique_series_values(df=wb_data[wb_data.category2.notna()], 
-                                                            series_name='category2'))
-                ],
+                          for i in sorted(get_unique_series_values(df=wb_data[wb_data.category2.notna()],
+                                                                   series_name='category2'))],
                 value=[],
                 className='menu-item'
             ),
@@ -124,7 +123,7 @@ cards = dmc.SimpleGrid(
 )
 
 competitors_offers = html.Div([
-    dmc.Text('Топ-10 предложений конкурентов', className='block-title'),
+    dmc.Text('Топ предложений конкурентов', className='block-title'),
     cards,
     dmc.Pagination(id='pagination', total=5, siblings=1, page=1, radius=0, color='#000000', withControls=True,
                    style={'float': 'right'}),
