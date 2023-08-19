@@ -121,14 +121,21 @@ def draw_category_stats(checkbx_brand, checkbx_gender, checkbx_category):
     Input('checkbx-brand', 'value'),
     Input('checkbx-gender', 'value'),
     Input('checkbx-category', 'value'),
+    Input("framework-select", "value")
 )
-def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category):
+def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category, sorting):
     filtrated_df = sort_df_by_all_filters(df=wb_data,
                                           checkbx_brand=checkbx_brand,
                                           checkbx_gender=checkbx_gender,
                                           checkbx_category=checkbx_category)
 
-    top_positions = filtrated_df.sort_values(['rating', 'orders_count', 'feedbacks_count'], ascending=False).head(32)
+    if sorting is None:
+        sorting = ['rating', 'orders_count', 'feedbacks_count']
+    else:
+        sorting = [sorting]
+
+    top_positions = filtrated_df.sort_values(sorting, ascending=False).head(32)
+
     max_page = top_positions.shape[0] // 4
     top_positions = top_positions[:max_page * 4]
     top_positions = top_positions[:page * 4]

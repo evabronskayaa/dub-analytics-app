@@ -7,7 +7,6 @@ import dash_mantine_components as dmc
 from data import wb_data
 from data_processing import get_unique_series_values
 
-
 header_filters = dmc.Grid([
     dmc.CheckboxGroup(
         id="checkbx-brand",
@@ -48,7 +47,7 @@ header_filters = dmc.Grid([
                 orientation="horizontal",
                 offset="md",
                 mb=10,
-                children=[dmc.Checkbox(label=i, value=i) 
+                children=[dmc.Checkbox(label=i, value=i)
                           for i in sorted(get_unique_series_values(df=wb_data[wb_data.category2.notna()],
                                                                    series_name='category2'))],
                 value=[],
@@ -75,6 +74,19 @@ header_filters = dmc.Grid([
         value=[],
         className='menu-item'
     ),
+    dmc.Select(
+        label="Сортировать по:",
+        placeholder="Select one",
+        id="framework-select",
+        clearable=True,
+        data=[
+            {"value": "rating", "label": "Рейтингу"},
+            {"value": "orders_count", "label": "Количеству покупок"},
+            {"value": "feedbacks_count", "label": "Количеству отзывов"},
+        ],
+        style={"width": '100%', "marginBottom": 10, },
+    ),
+    dmc.Text(id="selected-value"),
 ],
     className='menu'
 )
