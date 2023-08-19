@@ -149,5 +149,5 @@ def draw_competitor_stats(page, checkbx_brand, checkbx_gender, checkbx_category,
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
     # app.run_server(host='0.0.0.0', debug=True)

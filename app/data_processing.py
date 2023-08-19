@@ -106,7 +106,7 @@ def create_product_small_card(product, modal_demo_button_id='modal-demo-button')
                 className='card-text'
             ),
             dmc.Text(
-                product.description[:200],
+                product.description[:200] + '...',
                 size="sm",
                 color="dimmed",
                 className='card-text'
